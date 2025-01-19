@@ -17,11 +17,7 @@ export async function PUT(request: NextRequest, { params }: { params: Params }):
 }
 
 export async function GET(request: NextRequest, { params }: { params: Params }): Promise<NextResponse> {
-<<<<<<< HEAD
     const { id } = await params;
-=======
-    const { id } = params;
->>>>>>> 0f08fb3272f8b796ae48b6416bb7199d5a599d7f
     await connectMongoDB();
     const topic = await Topic.findOne({ _id: id });
 

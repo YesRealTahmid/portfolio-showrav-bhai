@@ -1,17 +1,9 @@
-<<<<<<< HEAD
 'use client'; 
-=======
-'use client'; // Marks this as a Client Component
->>>>>>> 0f08fb3272f8b796ae48b6416bb7199d5a599d7f
 import React, { useState, useEffect } from 'react';
 
 interface Topic {
     id: string;
     title: string;
-<<<<<<< HEAD
-=======
-    // Add any other fields you expect the topics to have
->>>>>>> 0f08fb3272f8b796ae48b6416bb7199d5a599d7f
 }
 
 interface TopicsResponse {
@@ -26,11 +18,7 @@ const fetchTopics = async (): Promise<TopicsResponse> => {
         return await res.json();
     } catch (error) {
         console.error('Error fetching topics:', error);
-<<<<<<< HEAD
         return { topics: [] }; 
-=======
-        return { topics: [] }; // Return empty array if there's an error
->>>>>>> 0f08fb3272f8b796ae48b6416bb7199d5a599d7f
     }
 };
 
@@ -40,19 +28,11 @@ const Page: React.FC = () => {
     useEffect(() => {
         const loadTopics = async () => {
             const data = await fetchTopics();
-<<<<<<< HEAD
             setTopics(data?.topics || []); 
         };
 
         loadTopics();
     }, []);
-=======
-            setTopics(data?.topics || []); // Set the fetched topics to the state
-        };
-
-        loadTopics();
-    }, []); // Empty dependency array ensures this runs once when the component mounts
->>>>>>> 0f08fb3272f8b796ae48b6416bb7199d5a599d7f
 
     return (
         <main className="text-white main-content">

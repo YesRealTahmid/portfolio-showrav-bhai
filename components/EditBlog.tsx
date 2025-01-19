@@ -51,7 +51,7 @@ export default async function UpdateBlog({ params }: UpdateBlogProps): Promise<J
         <p>Error: Unable to load the topic. Please check the ID or try again later.</p>
       </main>
     );
-  }
+  }  
 
   const { title, description } = data.topic;
 
@@ -86,6 +86,8 @@ function EditBlog({ id, title, description }: EditBlogProps) {
     }
   };
 
+
+
   return (
     <form className="w-[80%] mx-auto mt-10" onSubmit={handleSubmit(onSubmit)}>
       <h3 className="h3 article-title mt-10 mb-10">Edit Blog</h3>
@@ -104,7 +106,7 @@ function EditBlog({ id, title, description }: EditBlogProps) {
       {/* Description Field (Removed Editor, now just a simple input) */}
       <div className="mb-6">
         <label htmlFor="description" className="block mb-2 text-sm font-medium text-white">Description</label>
-        <input
+        <input 
           id="description"
           {...register('description')}
           className="w-full p-9 py-4 outline-none bg-[#121212] text-white rounded-2xl text-[14px]"

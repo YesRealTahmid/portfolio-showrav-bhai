@@ -37,11 +37,7 @@ const RemoveBtn: React.FC<RemoveBtnProps> = ({ id }) => {
                     'Your topic has been deleted.',
                     'success'
                 ).then(() => {
-<<<<<<< HEAD
                     router.push('/dashboard/editBlog');  
-=======
-                    router.push('/dashboard/editBlog');  // Redirect after successful deletion
->>>>>>> 0f08fb3272f8b796ae48b6416bb7199d5a599d7f
                 });
             } else {
                 Swal.fire(
@@ -51,12 +47,7 @@ const RemoveBtn: React.FC<RemoveBtnProps> = ({ id }) => {
                 );
             }
         } else if (result.dismiss === Swal.DismissReason.cancel) {
-<<<<<<< HEAD
             Swal.fire('Cancelled', 'Your Blog is safe :)', 'info');
-=======
-            // If user cancels, show a message (optional)
-            Swal.fire('Cancelled', 'Your topic is safe :)', 'info');
->>>>>>> 0f08fb3272f8b796ae48b6416bb7199d5a599d7f
         }
     };
 

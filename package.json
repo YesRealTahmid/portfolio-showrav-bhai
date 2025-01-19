@@ -21,6 +21,7 @@
     "mongodb": "^6.12.0",
     "mongoose": "^8.9.3",
     "next": "^15.1.4",
+    "quill": "^2.0.3",
     "react": "^19.0.0",
     "react-datepicker": "^7.6.0",
     "react-day-picker": "^9.5.0",
@@ -29,11 +30,9 @@
     "react-hot-toast": "^2.5.1",
     "react-icons": "^5.4.0",
     "react-markdown": "^9.0.3",
+    "react-quill": "^2.0.0",
     "rehype-highlight": "^7.0.1",
-<<<<<<< HEAD
     "styled-components": "^6.1.14",
-=======
->>>>>>> 0f08fb3272f8b796ae48b6416bb7199d5a599d7f
     "sweetalert2": "^11.15.10",
     "tailwind-merge": "^2.6.0",
     "zod": "^3.24.1"

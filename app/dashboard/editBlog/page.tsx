@@ -3,17 +3,9 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-<<<<<<< HEAD
 import { IoMdAdd } from "react-icons/io";
 import RemoveBtn from "@/components/RemoveBtn";
 
-=======
-import { AiOutlineEdit } from "react-icons/ai";
-import { IoMdAdd } from "react-icons/io";
-import RemoveBtn from "@/components/RemoveBtn";
-
-
->>>>>>> 0f08fb3272f8b796ae48b6416bb7199d5a599d7f
 interface Topic {
   _id: string;
   title: string;
@@ -36,10 +28,7 @@ const fetchTopics = async (): Promise<{ topics: Topic[] }> => {
 
 const Page: React.FC = () => {
   const [topics, setTopics] = useState<Topic[]>([]);
-<<<<<<< HEAD
   const [loading, setLoading] = useState<boolean>(true); // Loading state
-=======
->>>>>>> 0f08fb3272f8b796ae48b6416bb7199d5a599d7f
 
   useEffect(() => {
     const loadTopics = async () => {
@@ -72,15 +61,12 @@ const Page: React.FC = () => {
           {loading ? ( // Loader state
             <tr>
               <td colSpan={2} className="text-center py-4">
-<<<<<<< HEAD
                 <div className="loader">Loading...</div> {/* You can replace this with any loader */}
               </td>
             </tr>
           ) : topics.length === 0 ? (
             <tr>
               <td colSpan={2} className="text-center py-4">
-=======
->>>>>>> 0f08fb3272f8b796ae48b6416bb7199d5a599d7f
                 No topics available at the moment.
               </td>
             </tr>

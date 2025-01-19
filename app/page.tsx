@@ -27,7 +27,7 @@ export default function Home() {
       <article className="about active" data-page="about">
                 {/* ABOUT  */}
                 <About></About>
-        
+
                 <Clients></Clients>
                 {/* SERVICES  */}
                 <Services></Services>
