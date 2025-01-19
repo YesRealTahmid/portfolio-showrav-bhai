@@ -7,6 +7,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import toast from "react-hot-toast";
+import { useEditor, EditorContent } from '@tiptap/react';
+import StarterKit from '@tiptap/starter-kit';
+import { FaBold, FaItalic } from "react-icons/fa";
 
 type FormData = {
   title: string;
@@ -19,7 +22,10 @@ type FormData = {
 function Page(): JSX.Element {
   //   const [imageFile, setImageFile] = useState<File | null>(null);
   const [date, setDate] = useState<Date | null>(null);
-
+  const editor = useEditor({
+    extensions: [StarterKit],
+    content: "",
+  });
   const formSchema = z.object({
     title: z
       .string()
@@ -45,7 +51,7 @@ function Page(): JSX.Element {
     },
   });
 
-  
+
   const handleDateChange = (selectedDate: Date | null) => {
     setDate(selectedDate);
     setValue(
@@ -212,34 +218,42 @@ function Page(): JSX.Element {
           />
         </div>
 
-        <div className="flex-grow mt-14">
-          <label
-            htmlFor="description"
-            className="block mb-2 text-sm font-medium text-white"
-          >
+        <div className="box mt-10">
+          <label htmlFor="description" className="block mb-4 text-sm font-medium text-white">
             Description
           </label>
+          <div className="flex gap-4 mb-6">
+            <button
+              type="button"
+              onClick={() => editor?.chain().focus().toggleBold().run()}
+              className="text-white px-4 py-2 rounded"
+            >
+              <FaBold />
+            </button>
+            <button
+              type="button"
+              onClick={() => editor?.chain().focus().toggleItalic().run()}
+              className="text-white px-4 py-2 rounded"
+            >
+              <FaItalic />
+            </button>
+          </div>
+
           <Controller
             name="description"
             control={control}
             render={({ field, fieldState }) => (
               <>
-                <textarea
-                  {...field}
-                  id="description"
-                  className="w-full p-9 pt-8 outline-none bg-[#121212] text-white rounded-2xl text-[14px] resize-none"
-                  rows={5}
-                />
+                <div className="w-full p-4 outline-none bg-[#121212] text-white rounded-2xl text-[14px]">
+                  <EditorContent editor={editor} />
+                </div>
                 {fieldState.error && (
-                  <p className="text-red-500 text-sm">
-                    {fieldState.error.message}
-                  </p>
+                  <p className="text-red-500 text-sm">{fieldState.error.message}</p>
                 )}
               </>
             )}
           />
         </div>
-
         <button type="submit" className="button text-white mt-14">
           Submit
         </button>
